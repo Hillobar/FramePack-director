@@ -10,6 +10,7 @@ scipy==1.12.0
 requests==2.31.0
 torchsde==0.2.6
 
+peft
 einops
 opencv-contrib-python
 safetensors
