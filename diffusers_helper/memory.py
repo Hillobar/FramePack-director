@@ -92,9 +92,7 @@ def move_model_to_device_with_memory_preservation(model, target_device, preserve
             return
 
         if hasattr(m, 'weight'):
-            if [model.__class__.__name__, m, True] not in tracker:
-                tracker.append([model.__class__.__name__, m, True])
-                m.to(device=target_device, non_blocking=True)
+            m.to(device=target_device, non_blocking=True)
 
     model.to(device=target_device)
     torch.cuda.empty_cache()
@@ -111,12 +109,8 @@ def offload_model_from_device_for_memory_preservation(model, target_device, pres
             return
 
         if hasattr(m, 'weight'):
-            try:
-                index = tracker.index([model.__class__.__name__, m, True])
-                tracker[index].pop()
-                m.to(device=cpu, non_blocking=True)
-            except ValueError:
-                pass
+            m.to(device=cpu, non_blocking=True)
+
                 
             
 
