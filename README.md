@@ -1,5 +1,7 @@
 # FramePack-director
 
+![image](https://github.com/user-attachments/assets/4ae1c3fc-b6fd-4cb3-bc5e-d8bb89634750)
+
 This is an attempt to add some quicker control over the video generation process.
 
 New Features over the original FP-F1:
