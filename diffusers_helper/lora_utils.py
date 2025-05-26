@@ -63,7 +63,7 @@ def load_lora(transformer, lora_path: Path, weight):
     # Load the adapter with the original name
     transformer.load_lora_adapter(state_dict, network_alphas=None, adapter_name=adapter_name)
     set_adapters(transformer, adapter_name, weight)
-    # DynamicSwapInstaller.install_model(transformer, device="cuda")
+    DynamicSwapInstaller.install_model(transformer, device="cuda")
     print(f"LoRA weights '{adapter_name}' loaded successfully.")
     
     return transformer
